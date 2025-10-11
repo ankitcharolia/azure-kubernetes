@@ -7,7 +7,9 @@ Kindly refer `question-1.tf`
 
 ### Question - 2
 Kindly refer `question-2.tf`
+
 shop-backend-api Helm chart is stored under `charts/` folder
+
 `aks-cluster` terraform module is under `modules` directory
 
 ### Question - 3
