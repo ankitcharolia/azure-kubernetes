@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ .Values.cronjob.name }}
+  labels:
+    {{- include "shop-backend-api.labels" . | nindent 4 }}
+spec:
+  schedule: "{{ .Values.cronjob.schedule }}"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: {{ .Values.cronjob.restartPolicy }}
+          containers:
+            - name: {{ .Values.cronjob.name }}
+              image: {{ .Values.cronjob.image }}
+              args:
+              {{- range .Values.cronjob.args }}
+                - {{ . | quote }}
+              {{- end }}
