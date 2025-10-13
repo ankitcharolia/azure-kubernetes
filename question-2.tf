@@ -12,7 +12,7 @@ resource "helm_release" "shop_backend_api" {
   max_history       = 5
   timeout           = 600
 
-  depends_on = [ 
-    azurerm_kubernetes_cluster.this, 
+  depends_on = [
+    azurerm_kubernetes_cluster.this,
   ]
 }
