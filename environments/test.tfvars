@@ -8,7 +8,10 @@ tags = {
 }
 
 # VPC variables
-azure_nat_address_count = 1
+azure_nat_address_count      = 1
+vnet_address_space           = ["10.0.0.0/16"]
+kube_subnet_address_prefixes = ["10.0.0.0/24"]
+vm_subnet_address_prefixes   = ["10.0.1.0/24"]
 
 # AKS cluster variables
 kubernetes_version = "1.34"

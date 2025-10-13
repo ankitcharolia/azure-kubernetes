@@ -8,19 +8,19 @@ resource "azurerm_virtual_network" "vnet" {
   name                = "${var.environment}-vnet"
   location            = azurerm_resource_group.this.location
   resource_group_name = azurerm_resource_group.this.name
-  address_space       = ["10.0.0.0/16"]
+  address_space       = var.vnet_address_space
 }
 
 resource "azurerm_subnet" "kube_subnet" {
   name                 = "snet-01"
-  address_prefixes     = ["10.0.0.0/24"]
+  address_prefixes     = var.kube_subnet_address_prefixes
   virtual_network_name = azurerm_virtual_network.vnet.name
   resource_group_name  = azurerm_resource_group.this.name
 }
 
 resource "azurerm_subnet" "vm_subnet" {
   name                 = "snet-02"
-  address_prefixes     = ["10.0.1.0/24"]
+  address_prefixes     = var.vm_subnet_address_prefixes
   virtual_network_name = azurerm_virtual_network.vnet.name
   resource_group_name  = azurerm_resource_group.this.name
 }

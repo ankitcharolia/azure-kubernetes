@@ -41,3 +41,18 @@ variable "azure_nat_address_count" {
   description = "The number of public IP addresses to create for the NAT Gateway."
   type        = number
 }
+
+variable "vnet_address_space" {
+  description = "The address space for the virtual network."
+  type        = list(string)
+}
+
+variable "kube_subnet_address_prefixes" {
+  description = "The address prefixes for the Kubernetes subnet."
+  type        = list(string)
+}
+
+variable "vm_subnet_address_prefixes" {
+  description = "The address prefixes for the VM subnet."
+  type        = list(string)
+}
