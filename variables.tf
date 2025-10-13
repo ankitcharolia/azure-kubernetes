@@ -36,3 +36,8 @@ variable "aks_node_pools" {
   type        = any
   default     = []
 }
+
+variable "azure_nat_address_count" {
+  description = "The number of public IP addresses to create for the NAT Gateway."
+  type        = number
+}
