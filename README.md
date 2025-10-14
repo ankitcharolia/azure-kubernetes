@@ -25,13 +25,18 @@ Kindly refer `question-1.tf`
 
 ### Question - 2
 Kindly refer `question-2.tf`
-
-shop-backend-api Helm chart is stored under `charts/` folder
-
-`aks-cluster` and `vnet` terraform module is under `modules` directory
+* python start as child process of bash script (PID 1) and pythpn SimpleHTTPServer module can not handle concurrent request. so livenessprobe and readiness probe is failing.
+* shop-backend-api Helm chart is stored under `charts/` folder
+* `aks-cluster` and `vnet` terraform module is under `modules` directory
 
 ### Question - 3
 Kindly refer [this repository](https://github.com/ankitcharolia/log-analysis)
 
 ### Bonus Question - Backstage Template
 kindly refer `backstage.tf`
+
+## Debug
+```shell
+kubectl debug -it shop-backend-api-b77dfc8cc-vfgkz --image=ubuntu --target=shop-backend-api
+ apt-get install -y curl wget dnsutils net-tools iputils-ping telnet netcat-traditional gpg
+```

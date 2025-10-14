@@ -40,6 +40,19 @@ spec:
           {{- end }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: ["/bin/bash", "-c"]
+          args:
+            - |
+              mkdir -p /www && \
+              echo '<html><head><title>HTTP Hello World</title></head><body><h1>Hello from '$(hostname)'</h1></body></html>' > /www/index.html && \
+              cd /www && \
+              python - <<'EOF'
+              import SimpleHTTPServer, SocketServer
+              class ThreadingHTTPServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer): pass
+              Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
+              httpd = ThreadingHTTPServer(("", 80), Handler)
+              httpd.serve_forever()
+              EOF
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
