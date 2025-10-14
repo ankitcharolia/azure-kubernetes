@@ -1,0 +1,5 @@
+backstage:
+  appConfig:
+    app:
+      baseUrl: http://localhost:7007
+      

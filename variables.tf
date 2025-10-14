@@ -56,3 +56,8 @@ variable "vm_subnet_address_prefixes" {
   description = "The address prefixes for the VM subnet."
   type        = list(string)
 }
+
+variable "backstage_chart_version" {
+  description = "The version of the Backstage Helm chart to deploy."
+  type        = string
+}
