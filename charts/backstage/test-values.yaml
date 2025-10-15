@@ -1,11 +1,4 @@
-app:
-  baseUrl: http://localhost:7007
-
-backend:
-  baseUrl: http://localhost:7007
-  listen:
-    port: 7007
-  cors:
-    origin: http://localhost:7007
-    methods: [GET, POST, PUT, DELETE]
-    credentials: true
+postgresql:
+  enabled: true
+  auth:
+    password: mysecretpassword

@@ -32,8 +32,6 @@ Kindly refer `question-2.tf`
 ### Question - 3
 Kindly refer [this repository](https://github.com/ankitcharolia/log-analysis)
 
-### Bonus Question - Backstage Template
-Kindly refer [Work in Progress] [this repository](https://github.com/ankitcharolia/azure-backstage-templates)
 
 ## Debug
 ```shell
